@@ -4,3 +4,9 @@
     background-color: #a7a7a18f;
     text-align: center;
 }
+
+.watercolor-map {
+    width: 80%;
+    display: block;
+    margin: .5rem auto;
+}
