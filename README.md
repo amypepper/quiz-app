@@ -2,15 +2,15 @@ Just learning the basics of jQuery here. Probably won't help anyone but me!
 
 This app will:
 
+Take user to an intro page where they can click/select a button to start the quiz
+
 Render the quiz questions and answer choices one at a time
-
-Render the correct answer or incorrect answer page based on the user's response to a question
-
-User is taken to an intro page where they can click/select a button to start the quiz
 
 User can click/select one answer
 
 User can submit answer and see result
+
+Display correct answer or incorrect answer page based on the user's response to a question
 
 User can click 'Next' button to see next question
 
