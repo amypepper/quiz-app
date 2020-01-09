@@ -3,20 +3,38 @@
 function handleStartClick() {
 // listens for start button to be clicked and then shows the first quiz question page
     console.log(`handleStartClick ran`);
-    $('.js-button').click(function() {
+    $('.js-start-button').click(function(event) {
+        event.preventDefault();
         // render question 1
-        renderQuizQuestion();
+        renderQuizQuestion(0);
        
         // render submit button
         renderSubmitButton();
         // render question div
         renderScore(0);
         // render score div
-        renderScore(0);
+        
     });
 }
 
-handleStartClick();
+function handleSubmitClick() {
+// listens for submit click and calls evaluateAnswer
+    console.log(`handleSubmitClick ran`);
+    $('.js-submit').on('submit', '.js-button', function(event) {
+        event.preventDefault();
+        // render question 1
+        renderQuizQuestion(1);
+       
+        // render submit button
+        renderNextButton();
+        // render question div
+        renderScore(1);
+        // render score div
+        
+    });
+};
+$(handleStartClick());
+$(handleSubmitClick());
 
 
 /*
@@ -25,10 +43,7 @@ function handleRadioClick() {
     console.log(`handleRadioClick ran`);
 };
 
-function handleSubmitClick() {
-// listens for submit click and calls evaluateAnswer
-    console.log(`handleSubmitClick ran`);
-};
+
 
 function handleNextClick() {
 // uses current page id to call renderQuizQuestion and pass in the correct HTML for the next question

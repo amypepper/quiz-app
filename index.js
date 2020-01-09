@@ -37,29 +37,29 @@ const STORE = [
 let score = 0;
 let questionNumber = 0;
 
-function generateQuizQuestion() {
-    return `<legend>${STORE[0].question}</legend>
-    <input type="radio" name="quiz1" id="q1answer1">
+function generateQuizQuestion(index) {
+    return `<legend>${STORE[index].question}</legend>
+    <input type="radio" name="quiz" id="q1answer1" required="true">
     <label for="q1answer1">7,111</label>
 
-    <input type="radio" name="quiz1" id="q1answer2">
+    <input type="radio" name="quiz" id="q1answer2" required="true">
     <label for="q1answer2">124</label>
 
-    <input type="radio" name="quiz1" id="q1answer3">
+    <input type="radio" name="quiz" id="q1answer3" required="true">
     <label for="q1answer3">2,589</label>
 
-    <input type="radio" name="quiz1" id="q1answer4">
+    <input type="radio" name="quiz" id="q1answer4" required="true">
     <label for="q1answer4">4,506</label>`;
 };     
 
-function renderQuizQuestion() {
+function renderQuizQuestion(itemIndex) {
 // renders the questions to the DOM 
 // inserts a legend and input/labels into a fieldset element within a form
 // sets the name key of the target object at the proper index of STORE as the inner text of <legend>
 // assigns proper name/for/id/class attributes
     console.log(`renderQuizQuestion ran`);
     
-    const questionAndAnswers = generateQuizQuestion();
+    const questionAndAnswers = generateQuizQuestion(itemIndex);
 
     $('.js-question-and-answer-choices').html(questionAndAnswers);
 };
@@ -67,7 +67,8 @@ function renderQuizQuestion() {
 function renderSubmitButton() {
 // renders submit button to DOM
     console.log(`renderSubmitButton ran`);
-    $('.js-button').text('Submit');
+    $('.js-button').text('Submit').attr("type", "submit");
+
 } 
 
 function renderNextButton() {
