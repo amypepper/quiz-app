@@ -11,45 +11,28 @@
     <title>Languages of the World Quiz</title>
 </head>
 <body>
-    <div class="page-divider" id="page1">
-        <header>
-            <h1>Languages of the World Quiz</h1>
-        </header> 
-        <main>
-            <img class="watercolor-map"  src="watercolor-world-map.jpg" alt="watercolor map of the world">
-
-            <button>Start Quiz</button>
-        </main>
-    </div>
-   
-    <div class="page-divider" id="page2">
-        <header>
-            <h1>Languages of the World Quiz</h1>
-        </header> 
-        <main>
-            <h2>Question <span>0</span>/6</h2>
-            <form class="js-form">
-                <fieldset class="js-question-and-answer-choices">
-                </fieldset> 
-                <button type="submit">Submit</button>
-            </form>  
-        </main>
-        <footer>
-            <p>Score: <span>0</span>/6</p>
-        </footer>
-    </div>
-   
+    <header>
+        <h1>Languages of the World Quiz</h1>
+        <div class="question-progress"></div>
+    </header> 
+    <main>
+        <form class="js-form">
+            <fieldset class="js-question-and-answer-choices">
+                <img class="watercolor-map"  src="watercolor-world-map.jpg" alt="watercolor map of the world">
+            </fieldset> 
+            <button class="js-button">Start Quiz</button>
+        </form>  
+    </main>
+    <footer>
+        <div class="score-display"></div>
+    </footer>
     
-
-
-
-
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
     <script src="index.js"></script>
-    <!-- <script src="listeners.js"></script>
-    <script src="score.js"></script> -->
+    <script src="listeners.js"></script>
+    <!--<script src="score.js"></script> -->
 </body>
 </html>

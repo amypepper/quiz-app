@@ -37,19 +37,9 @@ const STORE = [
 let score = 0;
 let questionNumber = 0;
 
-function generateQuizQuestions() {
-    return 
-};
-
-function renderQuizQuestion() {
-// renders the questions to the DOM 
-// inserts a legend and input/labels into a fieldset element within a form
-// sets the name key of the target object at the proper index of STORE as the inner text of <legend>
-// assigns proper name/for/id/class attributes
-    console.log(`renderQuizQuestion ran`);
-    
-    const question = `<legend>How many living (currently spoken by native speakers) languages are known to exist as of 2019?</legend>`;
-    const answerChoices = `<input type="radio" name="quiz1" id="q1answer1">
+function generateQuizQuestion() {
+    return `<legend>${STORE[0].question}</legend>
+    <input type="radio" name="quiz1" id="q1answer1">
     <label for="q1answer1">7,111</label>
 
     <input type="radio" name="quiz1" id="q1answer2">
@@ -60,18 +50,45 @@ function renderQuizQuestion() {
 
     <input type="radio" name="quiz1" id="q1answer4">
     <label for="q1answer4">4,506</label>`;
+};     
 
-    $('.js-question-and-answer-choices').html(question + answerChoices);
+function renderQuizQuestion() {
+// renders the questions to the DOM 
+// inserts a legend and input/labels into a fieldset element within a form
+// sets the name key of the target object at the proper index of STORE as the inner text of <legend>
+// assigns proper name/for/id/class attributes
+    console.log(`renderQuizQuestion ran`);
     
+    const questionAndAnswers = generateQuizQuestion();
+
+    $('.js-question-and-answer-choices').html(questionAndAnswers);
 };
 
-$(renderQuizQuestion);
-/*
-renderButtons() {
-// renders the buttons to the DOM based on the other HTML content 
-    console.log(`renderButtons ran`);
+function renderSubmitButton() {
+// renders submit button to DOM
+    console.log(`renderSubmitButton ran`);
+    $('.js-button').text('Submit');
 } 
 
+function renderNextButton() {
+    console.log('renderNextButton ran');
+    $('.js-button').text('Next');
+}
+
+function renderScore(currentScore) {
+    // renders the value of calculateScore to the DOM
+    console.log(`renderScore ran`);
+    $('.score-display').text(`Score: ${currentScore}/6`);
+    };
+    
+function renderQuestionProgress(currentQuestion) {
+    console.log(`renderQuestionProgress ran`);
+    $('.question-progress').text(`Question ${currentQuestion}/6`);
+}
+
+
+
+/*
 renderCorrectAnswer() {
     // shows text "Correct! Good Job" and calls renderButtons and calculateScore
         console.log(`renderCorrectAnswer ran`);
@@ -83,10 +100,7 @@ renderIncorrectAnswer() {
     console.log(`renderIncorrectAnswer ran`);
 };
 
-renderScore() {
-// renders the value of calculateScore to the DOM
-    console.log(`renderScore ran`);
-};
+
     
 renderFinalPage() {
 // renders final page text to the DOM and calls calculatePercentageScore
