@@ -34,10 +34,13 @@ const STORE = [
     }
 ]
 
-const form = `<form>
+const formBox = `<form>
 <fieldset class="js-question-and-answer-choices"></fieldset>
-<button class="js-submit-button">Submit</button>
+<button class="js-submit-button" type="submit">Submit</button>
 </form>`
+
+const answerBox = `<section class="js-submission-response"></section>
+<button class="js-next-button>Next</button>`;
 
 let score = 0;
 
@@ -66,59 +69,47 @@ function renderQuizQuestion(itemIndex) {
 // assigns proper name/for/id/class attributes
     const questionAndAnswers = generateQuizQuestion(itemIndex);
 
-    $('main').html(form);    
-    
+    $('main').html(formBox); 
     $('.js-question-and-answer-choices').html(questionAndAnswers);
-
-    attachSubmitListener();
+    
     console.log(`renderQuizQuestion ran`);
 };
 
-function renderSubmitButton() {
-// renders submit button to DOM
-    console.log(`renderSubmitButton ran`);
-    $('.js-button').text('Submit').attr("type", "submit");
-} 
-
-function renderNextButton() {
-    console.log('renderNextButton ran');
-    $('.js-button').text('Next');
-}
-
 function renderScore(currentScore) {
     // renders the value of calculateScore to the DOM
-    console.log(`renderScore ran`);
     $('.score-display').text(`Score: ${currentScore}/6`);
-    };
+    console.log(`renderScore ran`);
+};
     
 function renderQuestionProgress(currentQuestion) {
+    // renders the question number the user is currently on to the DOM
     console.log(`renderQuestionProgress ran`);
-    $('.question-progress').text(`Question ${currentQuestion}/6`);
-}
+    $('.question-progress').text(`Question ${currentQuestion}/6`);  
+};
 
+function renderCorrectAnswer() {
+    // shows text "Correct! Good Job" and calls calculateScore and renderQuizQuestion    
+    $('main').html(answerBox); 
+    $('.js-submission-response').html(`<p>Correct! Keep up the good work.</p>`);
 
-
-/*
-renderCorrectAnswer() {
-    // shows text "Correct! Good Job" and calls renderButtons and calculateScore
-        console.log(`renderCorrectAnswer ran`);
-    };
+    console.log(`renderCorrectAnswer ran`);
+};
     
-renderIncorrectAnswer() {
+function renderIncorrectAnswer() {
 // shows "Incorrect" and renders correct answer to the DOM; calls renderButtons and calculateScore
+    $('main').html(answerBox);
+    $('.js-submission-response').html(`<p>Unfortunately, that's incorrect. Here's the correct answer:</p>
+    <p>${STORE[0].correctAnswer}</p>`);
 
     console.log(`renderIncorrectAnswer ran`);
 };
 
 
-    
+/*    
 renderFinalPage() {
 // renders final page text to the DOM and calls calculatePercentageScore
     console.log(`handleNextClick ran`);
 };
 
-evaluateAnswer() {
-// compares stored value from event.currentTarget to correct answer and calls either renderCorrect... or renderIncorrect...
-    console.log(`evaluateAnswer ran`);
-};
+
 */
