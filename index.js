@@ -34,8 +34,15 @@ const STORE = [
     }
 ]
 
+const form = `<form>
+<fieldset class="js-question-and-answer-choices"></fieldset>
+<button class="js-submit-button">Submit</button>
+</form>`
+
 let score = 0;
+
 let questionNumber = 0;
+
 
 function generateQuizQuestion(index) {
     return `<legend>${STORE[index].question}</legend>
@@ -57,18 +64,20 @@ function renderQuizQuestion(itemIndex) {
 // inserts a legend and input/labels into a fieldset element within a form
 // sets the name key of the target object at the proper index of STORE as the inner text of <legend>
 // assigns proper name/for/id/class attributes
-    console.log(`renderQuizQuestion ran`);
-    
     const questionAndAnswers = generateQuizQuestion(itemIndex);
 
+    $('main').html(form);    
+    
     $('.js-question-and-answer-choices').html(questionAndAnswers);
+
+    attachSubmitListener();
+    console.log(`renderQuizQuestion ran`);
 };
 
 function renderSubmitButton() {
 // renders submit button to DOM
     console.log(`renderSubmitButton ran`);
     $('.js-button').text('Submit').attr("type", "submit");
-
 } 
 
 function renderNextButton() {

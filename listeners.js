@@ -7,34 +7,28 @@ function handleStartClick() {
         event.preventDefault();
         // render question 1
         renderQuizQuestion(0);
-       
-        // render submit button
-        renderSubmitButton();
         // render question div
         renderScore(0);
         // render score div
-        
+        console.log(`handleStartClick ran`);
     });
 }
 
-function handleSubmitClick() {
+function attachSubmitListener() {
 // listens for submit click and calls evaluateAnswer
-    console.log(`handleSubmitClick ran`);
-    $('.js-submit').on('submit', '.js-button', function(event) {
+    $('.js-submit-button').on('click', function(event) {
         event.preventDefault();
         // render question 1
         renderQuizQuestion(1);
-       
         // render submit button
-        renderNextButton();
-        // render question div
+      
         renderScore(1);
         // render score div
-        
     });
+    console.log(`handleSubmitClick ran`);
 };
-$(handleStartClick());
-$(handleSubmitClick());
+handleStartClick();
+attachSubmitListener();
 
 
 /*
