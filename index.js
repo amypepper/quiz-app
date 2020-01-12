@@ -39,77 +39,76 @@ const formBox = `<form>
 <button class="js-submit-button" type="submit">Submit</button>
 </form>`
 
-const answerBox = `<section class="js-submission-response"></section>
-<button class="js-next-button>Next</button>`;
+const answerBox = `<section>
+<div class="js-submission-response"></div>
+<button class="js-next-button type="submit">Next</button>
+</section>`;
 
 let score = 0;
+let questionNumber = 1;
+let questionIndex = 0;
 
-let questionNumber = 0;
+//catch TypeError??
 
-
-function generateQuizQuestion(index) {
-    return `<legend>${STORE[index].question}</legend>
-    <input type="radio" name="quiz" id="q1answer1" required="true">
-    <label for="q1answer1">7,111</label>
+function generateQuizQuestion(itemIndex) {
+    return `<legend>${STORE[itemIndex].question}</legend>
+    <input type="radio" name="quiz" id="q1answer1" required="true" value="7,111">
+    <label for="q1answer1">${STORE[itemIndex].answers[0]}</label>
 
     <input type="radio" name="quiz" id="q1answer2" required="true">
-    <label for="q1answer2">124</label>
+    <label for="q1answer2">${STORE[itemIndex].answers[1]}</label>
 
     <input type="radio" name="quiz" id="q1answer3" required="true">
-    <label for="q1answer3">2,589</label>
+    <label for="q1answer3">${STORE[itemIndex].answers[2]}</label>
 
     <input type="radio" name="quiz" id="q1answer4" required="true">
-    <label for="q1answer4">4,506</label>`;
+    <label for="q1answer4">${STORE[itemIndex].answers[3]}</label>`
 };     
 
-function renderQuizQuestion(itemIndex) {
-// renders the questions to the DOM 
+function renderQuizQuestion() {
+/* renders the questions to the DOM 
 // inserts a legend and input/labels into a fieldset element within a form
-// sets the name key of the target object at the proper index of STORE as the inner text of <legend>
-// assigns proper name/for/id/class attributes
-    const questionAndAnswers = generateQuizQuestion(itemIndex);
+// sets the name key of the target object at the proper index of STORE as the inner text of `legend`
+// assigns proper name/for/id/class attributes */
+    const questionAndAnswers = generateQuizQuestion(questionIndex);
 
     $('main').html(formBox); 
     $('.js-question-and-answer-choices').html(questionAndAnswers);
-    
-    console.log(`renderQuizQuestion ran`);
 };
 
 function renderScore(currentScore) {
     // renders the value of calculateScore to the DOM
     $('.score-display').text(`Score: ${currentScore}/6`);
-    console.log(`renderScore ran`);
 };
     
 function renderQuestionProgress(currentQuestion) {
     // renders the question number the user is currently on to the DOM
-    console.log(`renderQuestionProgress ran`);
-    $('.question-progress').text(`Question ${currentQuestion}/6`);  
+    $('.question-progress').text(`Question ${currentQuestion}/6`);
 };
 
 function renderCorrectAnswer() {
     // shows text "Correct! Good Job" and calls calculateScore and renderQuizQuestion    
     $('main').html(answerBox); 
-    $('.js-submission-response').html(`<p>Correct! Keep up the good work.</p>`);
+    $('.js-submission-response').append(`<p>Correct! Keep up the good work.</p>`);
 
-    console.log(`renderCorrectAnswer ran`);
+    score++;
+
+    renderScore(score);
+    handleNextClick();
 };
     
 function renderIncorrectAnswer() {
 // shows "Incorrect" and renders correct answer to the DOM; calls renderButtons and calculateScore
     $('main').html(answerBox);
-    $('.js-submission-response').html(`<p>Unfortunately, that's incorrect. Here's the correct answer:</p>
-    <p>${STORE[0].correctAnswer}</p>`);
+    $('.js-submission-response').append(`<p>Unfortunately, that's incorrect. Here's the correct answer:</p>
+    <p>${STORE[questionIndex].correctAnswer}</p>`);
 
-    console.log(`renderIncorrectAnswer ran`);
+    renderScore(score);
+
+    handleNextClick();
 };
-
-
-/*    
-renderFinalPage() {
+  
+function renderFinalPage() {
 // renders final page text to the DOM and calls calculatePercentageScore
-    console.log(`handleNextClick ran`);
+    $('main').html('<p>this is the final page</p>');
 };
-
-
-*/

@@ -1,21 +1,17 @@
 'use strict'
 
-function evaluateAnswer(answer) {
+function evaluateAnswer(answer, itemIndex) {
     // compares stored value from <label> element to the correct answer and calls either renderCorrect... or renderIncorrect...
-    if(answer === STORE[0].correctAnswer) {
+    if(answer === STORE[itemIndex].correctAnswer) {
         renderCorrectAnswer();
     };
-    if(answer !== STORE[0].correctAnswer) {
+    if(answer !== STORE[itemIndex].correctAnswer) {
         renderIncorrectAnswer();
     }
     console.log(`evaluateAnswer ran`);
 };
 
 /*
-calculateScore() {
-// stores the count of questions answered correctly
-    console.log(`calculateScore ran`);
-};
 
 calculatePercentageScore() {
 // takes value returned by calculateScore and converts it to a percent value
