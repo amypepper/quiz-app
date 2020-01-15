@@ -10,11 +10,3 @@ function evaluateAnswer(answer, itemIndex) {
     }
     console.log(`evaluateAnswer ran`);
 };
-
-/*
-
-calculatePercentageScore() {
-// takes value returned by calculateScore and converts it to a percent value
-    console.log(`calculateScore ran`);
-}
-*/

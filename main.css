@@ -5,15 +5,46 @@ html {
     box-sizing: inherit;
   }
 
-.page-divider {
-    border: .25rem solid black;
-    margin-bottom: 1rem;
-    background-color: #a7a7a18f;
-    text-align: center;
+.watercolor-map {
+    width: 10%;
+    display: block;
+    margin: .5rem auto;
+}
+
+.ap-container {
+  width: 100vw;
+  height: 100%;
+  text-align: center;
+}
+
+.ap-header {
+  border:  2px solid black;
+  height: 25vh;
+  margin: 0 auto;
+}
+
+.ap-main  {
+  border: 2px solid black;
+  height: calc(100vh - (25vh + 15vh));
 }
 
 .watercolor-map {
-    width: 60%;
-    display: block;
-    margin: .5rem auto;
+
+}
+
+.ap-footer {
+  border:  2px solid black;
+  height: 15vh;
+}
+
+.js-error-alert {
+  color: red;
+  font-weight: bold;
+}
+/* HELPER CLASSES */
+.ap-inner-container {
+  max-width: 1024px;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
 }
