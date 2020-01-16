@@ -6,45 +6,76 @@ html {
   }
 
 .watercolor-map {
-    width: 10%;
-    display: block;
+    width: 40%;
     margin: .5rem auto;
 }
 
 .ap-container {
   width: 100vw;
   height: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .ap-header {
   border:  2px solid black;
-  height: 25vh;
+  height: 25%;
   margin: 0 auto;
 }
 
 .ap-main  {
   border: 2px solid black;
-  height: calc(100vh - (25vh + 15vh));
+  height: 60%;
+  display: flex;
 }
 
-.watercolor-map {
-
+.submission-response {
+  display: flex;
+  flex-direction: column;
 }
 
 .ap-footer {
-  border:  2px solid black;
-  height: 15vh;
+  border:  1px solid red;
+  height: 15%;
+  width: 80%;
 }
 
-.js-error-alert {
+
+
+/* FORM SETTINGS */
+.error-alert {
   color: red;
   font-weight: bold;
 }
+
+.ap-fieldset {
+  display: inline-block;
+  margin: 1rem;
+  border: none;
+}
+
+input[type="radio"] {
+  margin: .25rem;
+  width: 6%;
+  display: inline-block;
+}
+
+label {
+  width: 79%;
+  margin: .5rem;
+  display: inline-block;
+}
+
 /* HELPER CLASSES */
 .ap-inner-container {
   max-width: 1024px;
   display: flex;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: .5rem;
+  flex-grow: none;
 }

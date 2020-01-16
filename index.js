@@ -47,19 +47,19 @@ let questionIndex = 0;
 const startPage = `<img class="watercolor-map"  src="watercolor-world-map.jpg" alt="watercolor map of the world">
 <button class="js-start-button">Start Quiz</button>`;
 
-const formBox = `<form>
-<span class="js-error-alert"></span>
-<fieldset class="js-question-and-answer-choices"></fieldset>
+const formBox = `<form class="ap-inner-container">
+<span class="error-alert js-error-alert"></span>
+<fieldset class="ap-fieldset js-question-and-answer-choices"></fieldset>
 <button class="js-submit-button" type="submit">Submit</button>
 </form>`
 
-const answerBox = `<div class="js-submission-response"></div>
+const answerBox = `<div class="ap-inner-container js-submission-response"></div>
 <button class="js-next-button" type="submit">Next</button>`;
 
-const lastAnswerBox = `<div class="js-submission-response"></div>
+const lastAnswerBox = `<div class="ap-inner-container js-submission-response"></div>
 <button class="js-finish-button" type="submit">Final Results</button>`;
 
-const finalPageBox = `<div class="js-quiz-results">
+const finalPageBox = `<div class="ap-inner-container js-quiz-results">
 <h2>You did it!</h2>
     <p>Final score:</p>
     <p><span class="js-final-score-display"></span>/6</p>
