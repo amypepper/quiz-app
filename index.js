@@ -44,7 +44,7 @@ let score = 0;
 let questionNumber = 1;
 let questionIndex = 0;
 
-const startPage = `<img class="watercolor-map"  src="watercolor-world-map.jpg" alt="watercolor map of the world">
+const startPage = `<img class="watercolor-map" src="watercolor-world-map.jpg" alt="watercolor map of the world">
 <button class="js-start-button">Start Quiz</button>`;
 
 const formBox = `<form class="ap-inner-container">
@@ -119,6 +119,8 @@ function renderCorrectAnswer() {
 
     renderScore(score);
     handleNextClick();
+
+    console.log(`renderCorrectAnswer ran`)
 };
     
 function renderIncorrectAnswer() {
@@ -134,6 +136,7 @@ function renderIncorrectAnswer() {
 
     renderScore(score);
     handleNextClick();
+    console.log(`renderIncorrectAnswer ran`)
 };
 
 function renderFinalPage() {

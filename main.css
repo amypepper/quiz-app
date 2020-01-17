@@ -1,6 +1,7 @@
 html, body {
     box-sizing: border-box;
     height: 100%;
+    
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -8,10 +9,14 @@ html, body {
 
 .watercolor-map {
     width: 40%;
-    margin: .5rem auto;
+    margin: 0 auto .25rem auto;
+    border-radius: 10px;
+    min-width: 300px;
 }
 
+/* MAIN LAYOUT */
 .ap-container {
+  border: 2px solid navy;
   width: 100vw;
   height: 100%;
   display: flex;
@@ -37,16 +42,30 @@ html, body {
 .ap-header {
   border:  2px solid black;
   height: 25%;
-  margin: 0 auto;
+  margin: .25rem auto 0 auto;
+  font-family: Oswald;
+  max-width: 320px;
+  text-shadow: 1px 1px 2px rgb(44, 42, 43);
+  color: rgb(29, 29, 29);
+}
+
+.js-question-progress {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .ap-main  {
-  margin: 50px;
-  border: 1px solid rgb(179, 177, 177);
+  border: 2px solid olive;
   border-radius: 12px;
-  height: 60%;
+  height: 65%;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.726)
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: 1.75rem;
+  font-family: Gayathri;
+  font-weight: 500;
+  text-shadow: 0.5px 0.5px 1px rgb(44, 42, 43);
+  padding: .5rem;
+  flex-shrink: 5;
 }
 
 .submission-response {
@@ -56,19 +75,36 @@ html, body {
 
 .ap-footer {
   border:  1px solid red;
-  height: 15%;
+  height: 10%;
   width: 80%;
+  font-family: Oswald;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 0;
+  text-shadow: 1px 1px 2px rgb(44, 42, 43);
 }
 
 /* FORM SETTINGS */
+button {
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(143, 51, 111);
+  padding: .3rem;
+  height: 3rem;
+  width: 7rem;
+  font-family: Oswald;
+  font-size: 1.5rem;
+
+}
 .error-alert {
   color: red;
   font-weight: bold;
 }
 
 .ap-fieldset {
-  margin: 1rem;
-  border:none;
+  margin: .25rem;
+  border: none;
+  font-size: 1.5rem;
 }
 
 .ap-answer-choices {
@@ -86,6 +122,10 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: .5rem;
-  flex-grow: none;
+}
+
+@media screen and (max-width: 450px) {
+  .watercolor-map {
+    width: 60%;
+  }
 }

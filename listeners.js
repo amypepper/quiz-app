@@ -1,12 +1,9 @@
 'use strict';
 
-renderStartPage();
-
 function handleStartClick() {
 // listens for start button to be clicked and then shows the first quiz question page
     $('.js-start-button').click(function(event) {
         event.preventDefault();
-        
         $('.js-background-image').addClass('background-image');
         // render question 1
         renderQuizQuestion(questionIndex);
@@ -24,7 +21,7 @@ function handleSubmitClick() {
     $('.js-submit-button').click(function(event) {
         event.preventDefault();
         // store user input
-       const userAnswer = $('input[name="quiz"]:checked').next('label').text();
+       const userAnswer = $('input[name="quiz"]:checked').find('label').text();
        // render question count div
         renderQuestionProgress(questionNumber);
        // render score div
@@ -84,5 +81,5 @@ function evaluateAnswer(answer, itemIndex) {
     }
     console.log(`evaluateAnswer ran`);
 };
-
+renderStartPage();
 handleStartClick();
