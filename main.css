@@ -16,56 +16,56 @@ html, body {
 
 /* MAIN LAYOUT */
 .ap-container {
-border: 2px solid navy;
-width: 100vw;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  border: 2px solid navy;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .background-image::after {
-content: "";
-background: url(watercolor-world-map.jpg);
-opacity: 0.6;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-position: absolute;
-z-index: -1;
-background-repeat: no-repeat;
-background-size: cover;   
+  content: "";
+  background: url(watercolor-world-map.jpg);
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;   
 }
 
 .ap-header {
-border:  2px solid black;
-height: 25%;
-margin: .25rem auto 0 auto;
-font-family: Oswald;
-max-width: 320px;
-text-shadow: 1px 1px 2px rgb(44, 42, 43);
-color: rgb(29, 29, 29);
+  border:  2px solid black;
+  height: 25%;
+  margin: .25rem auto 0 auto;
+  font-family: Oswald;
+  max-width: 320px;
+  text-shadow: 1px 1px 2px rgb(44, 42, 43);
+  color: rgb(29, 29, 29);
 }
 
 .js-question-progress {
-font-weight: bold;
-font-size: 1.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .ap-main  {
-border: 2px solid olive;
-border-radius: 12px;
-height: 65%;
-display: flex;
-background-color: rgba(255, 255, 255, 0.25);
-font-size: 1.75rem;
-font-family: Gayathri;
-font-weight: 500;
-text-shadow: 0.5px 0.5px 1px rgb(44, 42, 43);
-padding: .5rem;
-flex-shrink: 5;
+  border: 2px solid olive;
+  border-radius: 12px;
+  height: 65%;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: 1.75rem;
+  font-family: Gayathri;
+  font-weight: 500;
+  text-shadow: 0.5px 0.5px 1px rgb(44, 42, 43);
+  padding: .5rem;
+  flex-shrink: 5;
 }
 
 .submission-response {
