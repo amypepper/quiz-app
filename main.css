@@ -39,6 +39,20 @@ background-repeat: no-repeat;
 background-size: cover;   
 }
 
+.background-image::after {
+  content: "";
+  background: url(watercolor-world-map.jpg);
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;   
+}
+
 .ap-header {
 border:  2px solid black;
 height: 25%;
