@@ -1,5 +1,6 @@
-html {
+html, body {
     box-sizing: border-box;
+    height: 100%;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -19,6 +20,20 @@ html {
   align-items: center;
 }
 
+.background-image::after {
+  content: "";
+  background: url(watercolor-world-map.jpg);
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;   
+}
+
 .ap-header {
   border:  2px solid black;
   height: 25%;
@@ -26,9 +41,12 @@ html {
 }
 
 .ap-main  {
-  border: 2px solid black;
+  margin: 50px;
+  border: 1px solid rgb(179, 177, 177);
+  border-radius: 12px;
   height: 60%;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.726)
 }
 
 .submission-response {
@@ -42,8 +60,6 @@ html {
   width: 80%;
 }
 
-
-
 /* FORM SETTINGS */
 .error-alert {
   color: red;
@@ -51,22 +67,16 @@ html {
 }
 
 .ap-fieldset {
-  display: inline-block;
   margin: 1rem;
-  border: none;
+  border:none;
 }
 
-input[type="radio"] {
-  margin: .25rem;
-  width: 6%;
-  display: inline-block;
-}
-
-label {
-  width: 79%;
-  margin: .5rem;
-  display: inline-block;
-}
+.ap-answer-choices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2px solid blue;
+} 
 
 /* HELPER CLASSES */
 .ap-inner-container {

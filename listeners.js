@@ -6,6 +6,8 @@ function handleStartClick() {
 // listens for start button to be clicked and then shows the first quiz question page
     $('.js-start-button').click(function(event) {
         event.preventDefault();
+        
+        $('.js-background-image').addClass('background-image');
         // render question 1
         renderQuizQuestion(questionIndex);
         // render question count div
