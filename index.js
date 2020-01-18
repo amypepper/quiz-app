@@ -44,7 +44,7 @@ let score = 0;
 let questionNumber = 1;
 let questionIndex = 0;
 
-const startPage = `<img class="watercolor-map" src="watercolor-world-map.jpg" alt="watercolor map of the world">
+const startPage = `<img class="watercolor-map"  src="watercolor-world-map.jpg" alt="watercolor map of the world">
 <button class="js-start-button">Start Quiz</button>`;
 
 const formBox = `<form class="ap-inner-container">
@@ -69,19 +69,17 @@ const finalPageBox = `<div class="ap-inner-container js-quiz-results">
 
 function generateQuizQuestion(itemIndex) {
     return `<legend>${STORE[itemIndex].question}</legend>
-    <div class="ap-answer-choices">
-    <label><input type="radio" name="quiz" id="answer1" required="true">
-    ${STORE[itemIndex].answers[0]}</label>
+    <input type="radio" name="quiz" id="answer1" required="true">
+    <label for="answer1">${STORE[itemIndex].answers[0]}</label>
 
-    <label><input type="radio" name="quiz" id="answer2" required="true">
-    ${STORE[itemIndex].answers[1]}</label>
+    <input type="radio" name="quiz" id="answer2" required="true">
+    <label for="answer2">${STORE[itemIndex].answers[1]}</label>
 
-    <label><input type="radio" name="quiz" id="answer3" required="true">
-    ${STORE[itemIndex].answers[2]}</label>
+    <input type="radio" name="quiz" id="answer3" required="true">
+    <label for="answer3">${STORE[itemIndex].answers[2]}</label>
 
-    <label><input type="radio" name="quiz" id="answer4" required="true">
-    ${STORE[itemIndex].answers[3]}</label>
-    </div>`
+    <input type="radio" name="quiz" id="answer4" required="true">
+    <label for="answer4">${STORE[itemIndex].answers[3]}</label>`
 };     
 
 function renderStartPage() {
@@ -119,8 +117,6 @@ function renderCorrectAnswer() {
 
     renderScore(score);
     handleNextClick();
-
-    console.log(`renderCorrectAnswer ran`)
 };
     
 function renderIncorrectAnswer() {
@@ -136,7 +132,6 @@ function renderIncorrectAnswer() {
 
     renderScore(score);
     handleNextClick();
-    console.log(`renderIncorrectAnswer ran`)
 };
 
 function renderFinalPage() {
