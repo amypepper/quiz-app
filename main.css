@@ -9,7 +9,7 @@ html, body {
 
 .watercolor-map {
   width: 40%;
-  margin: 0 auto .25rem auto;
+  margin: 0 auto .5rem auto;
   border-radius: 10px;
   min-width: 300px;
 }
@@ -153,5 +153,12 @@ text-align: center;
   margin-bottom: .25rem;
   padding-top: .25rem;
   padding-bottom: .25rem;
+}
+.ap-header h1 {
+  margin-bottom: .75rem;
+  margin-top: .75rem;
+}
+button {
+  height: 2rem;
 }
 }
