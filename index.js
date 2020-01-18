@@ -60,31 +60,38 @@ const lastAnswerBox = `<div class="ap-inner-container js-submission-response"></
 <button class="js-finish-button" type="submit">Final Results</button>`;
 
 const finalPageBox = `<div class="ap-inner-container js-quiz-results">
-<h2>You did it!</h2>
-    <p>Final score:</p>
-    <p><span class="js-final-score-display"></span>/6</p>
+<h2 class="final-score-intro">You did it!</h2>
+    <p class="final-score-intro">Final score:</p>
+    <p class="final-score"><span class="js-final-score-display"></span>/6</p>
     <p>To learn more about the world's languages, visit <a href="https://www.ethnologue.com" target="_blank">www.ethnologue.com</a>.</p>
 </div>
 <button class="js-retake-quiz-button" type="submit">Retake Quiz</button>`;
 
 function generateQuizQuestion(itemIndex) {
-    return `<legend>${STORE[itemIndex].question}</legend>
-    <input type="radio" name="quiz" id="answer1" required="true">
-    <label for="answer1">${STORE[itemIndex].answers[0]}</label>
+    return `<div class="fieldset-flex-container">
+    <legend>${STORE[itemIndex].question}</legend>
+    <label for="answer1"><input type="radio" name="quiz" id="answer1" required="true" value="${STORE[itemIndex].answers[0]}">
+    ${STORE[itemIndex].answers[0]}</label>
 
-    <input type="radio" name="quiz" id="answer2" required="true">
-    <label for="answer2">${STORE[itemIndex].answers[1]}</label>
+    <label for="answer2"><input type="radio" name="quiz" id="answer2" required="true" value="${STORE[itemIndex].answers[1]}">
+    ${STORE[itemIndex].answers[1]}</label>
 
-    <input type="radio" name="quiz" id="answer3" required="true">
-    <label for="answer3">${STORE[itemIndex].answers[2]}</label>
+    <label for="answer3"><input type="radio" name="quiz" id="answer3" required="true" value="${STORE[itemIndex].answers[2]}">
+    ${STORE[itemIndex].answers[2]}</label>
 
-    <input type="radio" name="quiz" id="answer4" required="true">
-    <label for="answer4">${STORE[itemIndex].answers[3]}</label>`
+    <label for="answer4"><input type="radio" name="quiz" id="answer4" required="true" value="${STORE[itemIndex].answers[3]}">
+    ${STORE[itemIndex].answers[3]}</label>
+    </div>`
 };     
+
+function toggleBackground() {
+    $('.js-background-image').toggleClass('background-image');
+};
 
 function renderStartPage() {
     $('main').html(startPage);
 }
+
 function renderQuizQuestion() {
 /* renders one question to the DOM using the value of `questionIndex` to retrieve the current question from STORE */
     const questionAndAnswers = generateQuizQuestion(questionIndex);

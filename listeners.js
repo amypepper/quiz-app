@@ -6,6 +6,7 @@ function handleStartClick() {
 // listens for start button to be clicked and then shows the first quiz question page
     $('.js-start-button').click(function(event) {
         event.preventDefault();
+        toggleBackground();
         // render question 1
         renderQuizQuestion(questionIndex);
         // render question count div
@@ -22,7 +23,7 @@ function handleSubmitClick() {
     $('.js-submit-button').click(function(event) {
         event.preventDefault();
         // store user input
-       const userAnswer = $('input[name="quiz"]:checked').next('label').text();
+       const userAnswer = $('input[name="quiz"]:checked').val();
        // render question count div
         renderQuestionProgress(questionNumber);
        // render score div
@@ -67,6 +68,7 @@ function handleRetakeQuizClick() {
         $('.js-question-progress').text('');
         $('.js-score-display').text('');
         $('main').html(startPage);
+        toggleBackground();
         handleStartClick();
     });
     console.log(`handleRetakeQuizClick ran`);
