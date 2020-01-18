@@ -26,7 +26,7 @@ align-items: center;
 
 .background-image::after {
 content: "";
-background: url(watercolor-world-map.jpg);
+background: url(../images/watercolor-world-map.jpg);
 opacity: 0.6;
 top: 0;
 left: 0;
@@ -146,5 +146,12 @@ text-align: center;
 @media screen and (max-width: 450px) {
 .watercolor-map {
   width: 60%;
+}
+.ap-main {
+  font-size: 1rem;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
 }
 }
