@@ -15,7 +15,6 @@ function handleStartClick() {
         renderScore(score);
         handleSubmitClick();
     });
-    console.log(`handleStartClick ran`);
 }
 
 function handleSubmitClick() {
@@ -29,13 +28,12 @@ function handleSubmitClick() {
        // render score div
         renderScore(score); 
 
-        if ($('input[name="quiz"]:checked').length === 1) {
+         if ($('input[name="quiz"]:checked').length === 1) {
             evaluateAnswer(userAnswer, questionIndex);
-        } else {
-            $('.js-error-alert').text("Please select an answer");
-        };
+         } else {
+             $('.js-error-alert').text("Please select an answer");
+         };
     });
-    console.log(`handleSubmitClick ran`);
 };
 
 function handleNextClick() {
@@ -49,7 +47,6 @@ function handleNextClick() {
         renderQuestionProgress(questionNumber);
         handleSubmitClick();
     });
-    console.log(`handleNextClick ran`);
 };
 
 function handleFinishClick() {
@@ -71,18 +68,6 @@ function handleRetakeQuizClick() {
         toggleBackground();
         handleStartClick();
     });
-    console.log(`handleRetakeQuizClick ran`);
-};
-
-function evaluateAnswer(answer, itemIndex) {
-    // compares stored value from <label> element to the correct answer and calls either renderCorrect... or renderIncorrect...
-    if(answer === STORE[itemIndex].correctAnswer) {
-        renderCorrectAnswer();
-    };
-    if(answer !== STORE[itemIndex].correctAnswer) {
-        renderIncorrectAnswer();
-    }
-    console.log(`evaluateAnswer ran`);
 };
 
 handleStartClick();

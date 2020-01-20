@@ -68,24 +68,24 @@ const finalPageBox = `<div class="ap-inner-container js-quiz-results">
 <button class="js-retake-quiz-button" type="submit">Retake Quiz</button>`;
 
 function generateQuizQuestion(itemIndex) {
-    return `<div class="fieldset-flex-container">
-    <legend>${STORE[itemIndex].question}</legend>
-    <label for="answer1"><input type="radio" name="quiz" id="answer1" required="true" value="${STORE[itemIndex].answers[0]}">
+    return `<legend>${STORE[itemIndex].question}</legend>
+    <div class="fieldset-flex-container">
+    <label for="answer1"><input type="radio" name="quiz" id="answer1" required="required" aria-required="true" value="${STORE[itemIndex].answers[0]}">
     ${STORE[itemIndex].answers[0]}</label>
 
-    <label for="answer2"><input type="radio" name="quiz" id="answer2" required="true" value="${STORE[itemIndex].answers[1]}">
+    <label for="answer2"><input type="radio" name="quiz" id="answer2" required="required" aria-required="true" value="${STORE[itemIndex].answers[1]}">
     ${STORE[itemIndex].answers[1]}</label>
 
-    <label for="answer3"><input type="radio" name="quiz" id="answer3" required="true" value="${STORE[itemIndex].answers[2]}">
+    <label for="answer3"><input type="radio" name="quiz" id="answer3" required="required" aria-required="true" value="${STORE[itemIndex].answers[2]}">
     ${STORE[itemIndex].answers[2]}</label>
 
-    <label for="answer4"><input type="radio" name="quiz" id="answer4" required="true" value="${STORE[itemIndex].answers[3]}">
+    <label for="answer4"><input type="radio" name="quiz" id="answer4" required="required" aria-required="true" value="${STORE[itemIndex].answers[3]}">
     ${STORE[itemIndex].answers[3]}</label>
     </div>`
 };     
 
 function toggleBackground() {
-    $('.js-background-image').toggleClass('background-image');
+    $('.js-background').toggleClass('background-image start-background');
 };
 
 function renderStartPage() {
@@ -108,6 +108,16 @@ function renderScore(currentScore) {
 function renderQuestionProgress(currentQuestion) {
     // renders the question number the user is currently on to the DOM
     $('.js-question-progress').text(`Question ${currentQuestion}/6`);
+};
+
+function evaluateAnswer(answer, itemIndex) {
+    // compares stored value from <label> element to the correct answer and calls either renderCorrect... or renderIncorrect...
+    if(answer === STORE[itemIndex].correctAnswer) {
+        renderCorrectAnswer();
+    };
+    if(answer !== STORE[itemIndex].correctAnswer) {
+        renderIncorrectAnswer();
+    }
 };
 
 function renderCorrectAnswer() {

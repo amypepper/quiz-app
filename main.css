@@ -2,19 +2,36 @@ html, body {
   box-sizing: border-box;
   height: 100%;
   font-family: sans-serif;
+  
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 .watercolor-map {
-  width: 40%;
+  width: 35%;
   margin: 0 auto .5rem auto;
   border-radius: 10px;
   min-width: 300px;
 }
 
 /* MAIN LAYOUT */
+.start-background {
+  background: rgb(212, 190, 158);
+}
+
+.start-background.ap-header {
+  background-color:rgb(212, 190, 158);
+}
+
+.start-background.ap-main {
+  background-color:rgb(212, 190, 158);
+}
+
+.start-background.ap-footer {
+  background-color:rgb(212, 190, 158);
+}
+
 .ap-container {
 width: 100vw;
 height: 100%;
@@ -24,27 +41,26 @@ justify-content: center;
 align-items: center;
 }
 
-.background-image::after {
-content: "";
-background: url(images/watercolor-world-map.jpg);
-opacity: 0.6;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-position: absolute;
-z-index: -1;
-background-repeat: no-repeat;
-background-size: cover;   
+.background-image {
+  background-image: url(images/watercolor-world-map.jpg);
+  background-repeat: round ;
+  background-size: 30%;
 }
 
 .ap-header {
 height: 25%;
-margin: .25rem auto 0 auto;
-font-family: Oswald, sans-serif;
-max-width: 320px;
-text-shadow: 1px 1px 2px rgb(44, 42, 43);
-color: rgb(29, 29, 29);
+margin: .25rem auto;
+padding: 0 .75rem;
+max-width: 310px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: rgb(88, 44, 14);
+background: rgb(230, 230, 230);
+border-radius: 12px;
+}
+
+.ap-header h1 {
+  margin-block-end: 1rem;
+  margin-block-start: 0;
 }
 
 .js-question-progress {
@@ -54,13 +70,13 @@ font-size: 1.5rem;
 
 .ap-main  {
 border-radius: 12px;
+background: rgb(230, 230, 230);
 height: 65%;
 display: flex;
-background-color: rgba(255, 255, 255, 0.25);
+color: rgb(88, 44, 14);
 font-size: 1.75rem;
 font-family: Gayathri, sans-serif;
-font-weight: 500;
-text-shadow: 0.5px 0.5px 1px rgb(44, 42, 43);
+font-weight: 600;
 padding: .5rem;
 flex-shrink: 5;
 }
@@ -72,12 +88,14 @@ flex-direction: column;
 
 .ap-footer {
 height: 10%;
-width: 80%;
-font-family: Oswald, sans-serif;
+width: 310px;
+padding-top: 0;
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: rgb(88, 44, 14);
 font-size: 1.5rem;
 font-weight: bold;
-padding-top: 0;
-text-shadow: 1px 1px 2px rgb(44, 42, 43);
+background: rgb(230, 230, 230);
+border-radius: 12px;
 }
 
 /* FORM SETTINGS */
@@ -100,7 +118,7 @@ font-weight: bold;
 .ap-fieldset {
 margin: .25rem;
 border: none;
-font-size: 1.5rem;
+font-size: 1.25rem;
 }
 
 .ap-answer-choices {
@@ -147,6 +165,10 @@ text-align: center;
 .watercolor-map {
   width: 60%;
 }
+.background-image { 
+  background-image: none;
+  background-color: rgb(230, 230, 230);
+}
 .ap-main {
   font-size: 1rem;
   margin-top: .25rem;
@@ -163,8 +185,9 @@ button {
 }
 .ap-fieldset {
   padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
   font-size: 1rem;
+  text-align: left;
 }
 }
