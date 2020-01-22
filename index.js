@@ -53,18 +53,18 @@ const formBox = `<form class="ap-inner-container">
 <button class="js-submit-button" type="submit">Submit</button>
 </form>`
 
-const answerBox = `<div class="ap-inner-container js-submission-response"></div>
+const answerBox = `<section role="main" class="ap-inner-container js-submission-response"></section>
 <button class="js-next-button" type="submit">Next</button>`;
 
-const lastAnswerBox = `<div class="ap-inner-container js-submission-response"></div>
+const lastAnswerBox = `<section role="main" class="ap-inner-container js-submission-response"></section>
 <button class="js-finish-button" type="submit">Final Results</button>`;
 
-const finalPageBox = `<div class="ap-inner-container js-quiz-results">
+const finalPageBox = `<section role="main" class="ap-inner-container js-quiz-results">
 <h2 class="final-score-intro">You did it!</h2>
     <p class="final-score-intro">Final score:</p>
     <p class="final-score"><span class="js-final-score-display"></span>/6</p>
     <p>To learn more about the world's languages, visit <a href="https://www.ethnologue.com" target="_blank">www.ethnologue.com</a>.</p>
-</div>
+</section>
 <button class="js-retake-quiz-button" type="submit">Retake Quiz</button>`;
 
 function generateQuizQuestion(itemIndex) {
