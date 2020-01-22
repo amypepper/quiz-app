@@ -70,16 +70,16 @@ const finalPageBox = `<div class="ap-inner-container js-quiz-results">
 function generateQuizQuestion(itemIndex) {
     return `<legend>${STORE[itemIndex].question}</legend>
     <div class="fieldset-flex-container">
-    <label for="answer1"><input type="radio" name="quiz" id="answer1" required="required" aria-required="true" value="${STORE[itemIndex].answers[0]}">
+    <label class="radio-inputs" for="answer1"><input type="radio" name="quiz" id="answer1" required="required" aria-required="true" value="${STORE[itemIndex].answers[0]}">
     ${STORE[itemIndex].answers[0]}</label>
 
-    <label for="answer2"><input type="radio" name="quiz" id="answer2" required="required" aria-required="true" value="${STORE[itemIndex].answers[1]}">
+    <label class="radio-inputs" for="answer2"><input type="radio" name="quiz" id="answer2" required="required" aria-required="true" value="${STORE[itemIndex].answers[1]}">
     ${STORE[itemIndex].answers[1]}</label>
 
-    <label for="answer3"><input type="radio" name="quiz" id="answer3" required="required" aria-required="true" value="${STORE[itemIndex].answers[2]}">
+    <label class="radio-inputs" for="answer3"><input type="radio" name="quiz" id="answer3" required="required" aria-required="true" value="${STORE[itemIndex].answers[2]}">
     ${STORE[itemIndex].answers[2]}</label>
 
-    <label for="answer4"><input type="radio" name="quiz" id="answer4" required="required" aria-required="true" value="${STORE[itemIndex].answers[3]}">
+    <label class="radio-inputs" for="answer4"><input type="radio" name="quiz" id="answer4" required="required" aria-required="true" value="${STORE[itemIndex].answers[3]}">
     ${STORE[itemIndex].answers[3]}</label>
     </div>`
 };     

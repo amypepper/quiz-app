@@ -35,6 +35,7 @@ html, body {
 .ap-container {
 width: 100vw;
 height: 100%;
+padding: .75rem .5rem;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -56,11 +57,12 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 color: rgb(88, 44, 14);
 background: rgb(230, 230, 230);
 border-radius: 12px;
+jus
 }
 
 .ap-header h1 {
-  margin-block-end: 1rem;
   margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .js-question-progress {
@@ -73,11 +75,12 @@ border-radius: 12px;
 background: rgb(230, 230, 230);
 height: 65%;
 display: flex;
+justify-content: space-evenly;
 color: rgb(88, 44, 14);
 font-size: 1.75rem;
 font-family: Gayathri, sans-serif;
 font-weight: 600;
-padding: .5rem;
+padding: 1rem;
 flex-shrink: 5;
 }
 
@@ -96,11 +99,15 @@ font-size: 1.5rem;
 font-weight: bold;
 background: rgb(230, 230, 230);
 border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 /* FORM SETTINGS */
 button {
 border-radius: 10px;
+border: none;
 color: white;
 background-color: rgb(143, 51, 111);
 padding: .3rem;
@@ -110,15 +117,20 @@ font-family: Oswald, sans-serif;
 font-size: 1.25rem;
 }
 
+.radio-inputs {
+  margin-bottom: 1rem;
+}
+
 .error-alert {
 color: red;
 font-weight: bold;
 }
 
 .ap-fieldset {
-margin: .25rem;
+margin: 0;
 border: none;
 font-size: 1.25rem;
+padding: 1rem 0 0 0;
 }
 
 .ap-answer-choices {
@@ -137,11 +149,26 @@ align-items: flex-start;
 .ap-inner-container .final-score-intro {
   font-size: 2.5rem;
 }
-
+legend {
+  padding-top: 1rem;
+}
+label {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  line-height: 0;
+}
+input[type="radio"] {
+  margin-right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  line-height: 0;
+}
 .fieldset-flex-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .ap-inner-container p, h2 {
@@ -156,8 +183,8 @@ align-items: flex-start;
 max-width: 1024px;
 display: flex;
 flex-direction: column;
-justify-content: center;
 align-items: center;
+justify-content: space-around;
 text-align: center;
 }
 
@@ -167,21 +194,36 @@ text-align: center;
 }
 .background-image { 
   background-image: none;
-  background-color: rgb(230, 230, 230);
+  background: rgb(212, 190, 158);
 }
+
 .ap-main {
   font-size: 1rem;
-  margin-top: .25rem;
-  margin-bottom: .25rem;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
+  margin: 0 .25rem;
+  padding: .25rem 0;
+  height: 80%;
+ background: rgb(212, 190, 158);
+}
+.ap-header {
+  height: 15%;
+ background: rgb(212, 190, 158);
+  font-size: 1rem;
+  margin: 0 auto;
+}
+.ap-footer {
+  height: 5%;
+ background: rgb(212, 190, 158);
+  font-size: 1rem;
+}
+.js-question-progress {
+  font-size: 1rem;
 }
 .ap-header h1 {
-  margin-bottom: .75rem;
-  margin-top: .75rem;
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
 }
 button {
-  height: 2rem;
+  height: 3rem;
 }
 .ap-fieldset {
   padding: 0;
@@ -189,5 +231,9 @@ button {
   margin-bottom: .25rem;
   font-size: 1rem;
   text-align: left;
+}
+legend {
+  padding-bottom: .5rem;
+  padding-top: 0;
 }
 }
