@@ -1,4 +1,6 @@
-Just learning the basics of jQuery here. Probably won't help anyone but me!
+# Languages of the World Quiz
+
+I'm learning the basics of jQuery by making a fun little quiz about languages!
 
 This app will:
 
